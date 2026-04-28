@@ -1,10 +1,8 @@
 name: primeira-pipeline
-
 on:
   push:
     branches: ["main"]
   workflow_dispatch:
-
 jobs:
   primeiro-job:
     name: "meu primeiro job"
@@ -12,17 +10,19 @@ jobs:
     steps:
       - name: "minha primeira ação"
         run: echo "hello world"
-
       - name: "segunda ação"
         run: |
           echo "Você criou seu primeiro workflow"
           echo "parabéns"
   segundo-job:
-     name: "instalação do ambiente NodeJS"
-     runs-on: ubuntu-latest
-     steps:
-         - name: "verificação da versão do node JS atual"
-           run: node --version
-      
-
-   
+    name: "instalação do ambiente NodeJS"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "verificação da versão do node JS atual"
+        run: node --version
+      - name: "Definição da versão 20.13.1. do NodeJS"
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.13.1'
+      - name: "verificação da versão do node depois de instalar"
+        run: node --version
