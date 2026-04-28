@@ -17,3 +17,12 @@ jobs:
         run: |
           echo "Você criou seu primeiro workflow"
           echo "parabéns"
+  segundo-job:
+     name: "instalação do ambiente NodeJS"
+     runs-on: ubuntu-latest
+     steps:
+         - name: "verificação da versão do node JS atual"
+           run: node --version
+      
+
+   
