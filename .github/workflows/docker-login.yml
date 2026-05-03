@@ -20,7 +20,7 @@ jobs:
       uses: docker/build-push-action@v5.3.0
       with:
         context: ./src
-        file: ./src/Dockerfile.txt
+        file: ./src/Dockerfile
         push: true
         tags: |
           lucascardoso1/aula-primeira-pipeline:v${{ github.run_number }}
